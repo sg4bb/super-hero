@@ -25,12 +25,36 @@
 
         <q-item-section> Consultar </q-item-section>
       </q-item>
+
+      <q-item clickable v-ripple to="/consult/id">
+        <q-item-section avatar>
+          <q-icon name="mdi-identifier" />
+        </q-item-section>
+
+        <q-item-section> Consultar por ID </q-item-section>
+      </q-item>
+
+      <q-item clickable v-ripple to="/consult/param">
+        <q-item-section avatar>
+          <q-icon name="mdi-format-letter-case" />
+        </q-item-section>
+
+        <q-item-section> Consultar por Parámetro </q-item-section>
+      </q-item>
+
+      <q-item clickable v-ripple to="/edit">
+        <q-item-section avatar>
+          <q-icon name="mdi-shield-edit" />
+        </q-item-section>
+
+        <q-item-section> Modificar </q-item-section>
+      </q-item>
     </q-list>
   </q-scroll-area>
 
   <q-img
     class="absolute-top"
-    src="https://cdn.quasar.dev/img/material.png"
+    src="https://cdn.quasar.dev/img/parallax2.jpg"
     style="height: 150px"
   >
     <div class="absolute-bottom bg-transparent">
