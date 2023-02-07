@@ -1,59 +1,78 @@
 <script setup>
+import { ref } from "@vue/reactivity";
+import { db } from "../firebase";
+import { collection, getDocs, query } from "firebase/firestore";
+
+getHero();
+
 const columns = [
   {
-    name: "name",
+    name: "IdHero",
     required: true,
-    label: "Dessert (100g serving)",
+    label: "IdHero",
     align: "left",
-    field: (row) => row.name,
-    format: (val) => `${val}`,
-    sortable: true,
+    field: "IdHero",
+    // format: (val) => `${val}`,
+    sortable: false,
   },
   {
-    name: "calories",
+    name: "NombreHero",
     align: "center",
-    label: "Calories",
-    field: "calories",
+    label: "Nombre",
+    field: "NombreHero",
     sortable: true,
   },
-  { name: "fat", label: "Fat (g)", field: "fat", sortable: true },
-  { name: "carbs", label: "Carbs (g)", field: "carbs" },
-  { name: "protein", label: "Protein (g)", field: "protein" },
-  { name: "sodium", label: "Sodium (mg)", field: "sodium" },
   {
-    name: "calcium",
-    label: "Calcium (%)",
-    field: "calcium",
-    sortable: true,
-    sort: (a, b) => parseInt(a, 10) - parseInt(b, 10),
-  },
-  {
-    name: "iron",
-    label: "Iron (%)",
-    field: "iron",
-    sortable: true,
-    sort: (a, b) => parseInt(a, 10) - parseInt(b, 10),
+    name: "DescHero",
+    align: "center",
+    label: "Descripción",
+    field: "DescHero",
+    sortable: false,
   },
 ];
 
-const rows = [
-  {
-    name: "Frozen Yogurt",
-    calories: 159,
-    fat: 6.0,
-    carbs: 24,
-    protein: 4.0,
-    sodium: 87,
-    calcium: "14%",
-    iron: "1%",
+const rows = ref([]);
+const loading = ref(true);
+
+async function getHero() {
+  try {
+    const q = query(collection(db, "heroes"));
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+      // console.log(doc.id, " => ", doc.data());
+      const rowHero = {
+        IdHero: doc.id,
+        NombreHero: doc.data().nombre,
+        DescHero: doc.data().descripcion
+      }
+      console.log(rowHero);
+      rows.value.push(rowHero);
+    });
+  } catch (error) {
+    console.log(error);
+  } finally {
+    loading.value = false;
   }
-];
+};
 </script>
 
 <template>
-  <h3 class="text-weight-bolder text-center text-primary">Consultar todos los superheroes</h3>
+  <h3 class="text-weight-bolder text-center text-primary">
+    Consultar todos los superhéroes
+    <q-img
+      src="https://i.ibb.co/f2CQhxF/free-png-superman-png-images-transparent-superman-comic-11562850237b7jn3x0usi.png"
+      style="width: 5%; height: 5%"
+    ></q-img>
+  </h3>
 
   <div class="q-pa-md">
-    <q-table title="Treats" :rows="rows" :columns="columns" row-key="name" />
+    <q-table
+      title="Superhéroes"
+      :loading="loading"
+      :rows="rows"
+      :columns="columns"
+      :row-key="rows.IdHero"
+      no-data-label="Sin datos"
+    />
   </div>
 </template>
