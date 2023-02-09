@@ -43,8 +43,6 @@ const consultHero = () => {
       const q = query(Coleccion, where("__name__","==",text.value.trim()));
       rows.value = []; // Esto para que no se puedan ir almacenando en la tabla, solo una consulta
 
-      console.log(q);
-
       onSnapshot(q, (snapshot) => {
         snapshot.docs.forEach((doc) => {
           const rowHero = {
@@ -61,6 +59,7 @@ const consultHero = () => {
         if (rows.value.length !== 0) {
           console.log("no esta vacio");
           console.log(rows.value)
+          text.value = "";
         } else {
           console.log("esta vacio el doc");
 
@@ -73,7 +72,12 @@ const consultHero = () => {
         }
       });
     } catch (error) {
-      console.log(error);
+      $q.notify({
+            message: error,
+            color: "primary",
+            icon: "error",
+          });
+      text.value = "";
     }finally{
       loading.value = false;
     }
