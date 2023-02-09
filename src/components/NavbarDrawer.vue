@@ -54,15 +54,15 @@
 
   <q-img
     class="absolute-top"
-    src="https://cdn.quasar.dev/img/parallax2.jpg"
+    src="https://cdn.quasar.dev/img/material.png"
     style="height: 150px"
   >
     <div class="absolute-bottom bg-transparent">
       <q-avatar size="56px" class="q-mb-sm">
-        <img src="https://cdn.quasar.dev/img/boy-avatar.png" />
+        <img src="https://cdn.quasar.dev/img/avatar2.jpg" />
       </q-avatar>
-      <div class="text-weight-bold">Usuario ingresado</div>
-      <div class="text-weight-medium">@user</div>
+      <div class="text-h6 text-weight-bold">Daniela Alvarado</div>
+      <div class="text-subtitle2 text-weight-medium">@dalvarado14</div>
     </div>
   </q-img>
 </template>

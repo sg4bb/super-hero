@@ -6,7 +6,7 @@
   "author": "Gabriel",
   "private": true,
   "scripts": {
-    "test": "echo \"No test specified\" && exit 0"
+    "test": "jest"
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
@@ -20,6 +20,7 @@
   "devDependencies": {
     "@quasar/app-vite": "^1.0.0",
     "autoprefixer": "^10.4.2",
+    "jest": "^29.4.2",
     "postcss": "^8.4.14"
   },
   "engines": {
