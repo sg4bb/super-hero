@@ -85,8 +85,12 @@ const consultHerobyParam = () => {
 
 <template>
   <h3 class="text-weight-bolder text-center text-primary">
-    consultar Superhéroe por Parámetro :)
-    <q-img src="" style="width: 5%; height: 5%"></q-img>
+    Consultar Superhéroe por Parámetro
+    <q-img
+      src="https://i.ibb.co/x1wt84V/Sin-t-tulo-asda2.png"
+      width="80px"
+      height="104px"
+    ></q-img>
   </h3>
 
   <q-form
@@ -95,7 +99,7 @@ const consultHerobyParam = () => {
     @key.enter="consultHerobyParam"
   >
     <div class="row justify-center q-mt-xl q-gutter-sm">
-      <div class="col-9 col-md-3">
+      <div class="col-8 col-md-3">
         <q-input filled v-model="text" label="Ingresa una ID"> </q-input>
       </div>
       <div class="col-2 col-md-1">

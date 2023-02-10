@@ -191,8 +191,9 @@ async function getHero() {
   <h3 class="text-weight-bolder text-center text-primary">
     Modifica los superhéroes existentes
     <q-img
-      src="https://i.ibb.co/f2CQhxF/free-png-superman-png-images-transparent-superman-comic-11562850237b7jn3x0usi.png"
-      style="width: 5%; height: 5%"
+      src="https://w7.pngwing.com/pngs/216/837/png-transparent-the-incredible-hulk-she-hulk-spider-man-hulk-comic-comics-superhero-fictional-character.png"
+      width="100px"
+      height="104px"
     ></q-img>
   </h3>
 

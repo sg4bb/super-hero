@@ -61,7 +61,8 @@ async function getHero() {
     Consultar todos los superhéroes
     <q-img
       src="https://i.ibb.co/f2CQhxF/free-png-superman-png-images-transparent-superman-comic-11562850237b7jn3x0usi.png"
-      style="width: 5%; height: 5%"
+      width="83px"
+      height="84px"
     ></q-img>
   </h3>
 

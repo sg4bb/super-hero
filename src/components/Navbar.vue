@@ -1,6 +1,6 @@
 <script setup>
-import { ref } from '@vue/reactivity';
-import NavbarDrawer from './NavbarDrawer.vue';
+import { ref } from "@vue/reactivity";
+import NavbarDrawer from "./NavbarDrawer.vue";
 
 const rightDrawerOpen = ref(false);
 
@@ -12,10 +12,11 @@ const toggleRightDrawer = () => {
 <template>
   <q-header elevated class="bg-primary text-white">
     <q-toolbar>
-      <q-toolbar-title>
-        <q-avatar>
-          <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg" />
-        </q-avatar>
+      <img
+        src="https://www.bigstwincities.org/wp-content/uploads/2017/01/superhero-comic-book-pow.png"
+        style="height: 37px; width: 50px"
+      />
+      <q-toolbar-title class="text-weight-bold">
         Quasar Super-Hero
       </q-toolbar-title>
 
@@ -23,10 +24,7 @@ const toggleRightDrawer = () => {
     </q-toolbar>
   </q-header>
 
-
-
-  <q-drawer show-if-above v-model="rightDrawerOpen" side="right" bordered>
+  <q-drawer show-if-above v-model="rightDrawerOpen" side="right">
     <NavbarDrawer />
   </q-drawer>
-
 </template>

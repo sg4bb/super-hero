@@ -54,15 +54,22 @@
 
   <q-img
     class="absolute-top"
-    src="https://cdn.quasar.dev/img/material.png"
+    src="https://cdn.quasar.dev/img/parallax2.jpg"
     style="height: 150px"
   >
+    <div class="absolute-full text-subtitle2 flex flex-center"></div>
     <div class="absolute-bottom bg-transparent">
       <q-avatar size="56px" class="q-mb-sm">
-        <img src="https://cdn.quasar.dev/img/avatar2.jpg" />
+        <img src="https://cdn.quasar.dev/img/boy-avatar.png" />
       </q-avatar>
-      <div class="text-h6 text-weight-bold">Daniela Alvarado</div>
-      <div class="text-subtitle2 text-weight-medium">@dalvarado14</div>
+      <div class="text-weight-bold">Razvan Stoenescu</div>
+      <div>@rstoenescu</div>
     </div>
   </q-img>
+
+  <div class="absolute-bottom bg-transparent q-pb-md">
+    <div class="row justify-center">
+      <q-btn color="primary">Cerrar sesion</q-btn>
+    </div>
+  </div>
 </template>
